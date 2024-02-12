@@ -9,6 +9,9 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.json());
 app.use(bodyParser.json());
 
+mongoose.connect("mongodb+srv://hemangpatel:admin%40project.com@personalcluster.r831tea.mongodb.net/").then(()=>{console.log("MongoDB coonected to cluster!");});
+
+
 app.get("/",(req,res,next)=>{
 	res.send("<h1>Student Hub Project Initialized!</h1>");
 });
