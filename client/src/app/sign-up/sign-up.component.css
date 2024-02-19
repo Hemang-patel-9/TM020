@@ -1,0 +1,21 @@
+.roket_img
+{
+    height: 280px;
+    width: 280px;
+    position: relative;
+    left: -11px;
+    top: 115px;
+}
+
+.orbit
+{
+    height: 425px;
+    width: 425px;
+    animation: spin 5s infinite linear;
+}
+
+@keyframes spin{
+    100%{
+        transform: rotate(360deg);
+    }
+}

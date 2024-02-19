@@ -1,0 +1,45 @@
+<div class="h-screen w-full font-normal" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #262626;">
+    <div class="h-screen justify-center px-40 py-20" style="background-image: url('../../assets/images/MacBook\ Air\ -\ 10.jpg'); background-size:100% 100%;">
+        <div class="flex flex-row bg-white rounded-xl " data-aos="zoom-in" data-aos-duration="3000">
+        <div class="flex flex-col">
+            <div class="mt-10 ml-10 flex flex-col">
+                <img src="../../assets/images/Rectangle 42.svg" alt="" class="w-14 h-14">
+                <div class="font-semibold text-2xl ">Log in</div>
+                <div class="text-xs font-medium">New to Academia Hub? <span class="underline text-blue-400">Create an account</span></div>
+            </div>
+            <div class=" ml-10 text-xs mt-10">
+                <form action="" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <table class="w-[484px]">
+                        <tr>
+                            <td colspan="2">
+                                <label for="email" >Email address or Conatct Number</label>
+                                <br>
+                                <input type="email" formControlName="email" class="border rounded-md h-10 border-black w-full mt-2 mb-5 mr-2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <label for="password" >Password</label>
+                                <br>
+                                <input type="password" formControlName="password" class="border rounded-md h-10 border-black w-full mt-2">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="mt-2">Use 8 or more characters with a mix of letters, numbers & symbols</div>
+                    <div class="mt-4 flex flex-row gap-1"><input type="checkbox"> <label for=""> Remember Me</label></div>
+                    <div class="flex-row flex my-10 justify-between items-center">
+                        <div class="underline">sign up instead</div>
+                        <button type="submit" class="bg-zinc-400 rounded-full px-8 py-2 font-bold text-lg text-white hover:bg-blue-600">Log in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="mt-10 ">
+            <div class=" orbit">
+            <img src="../../assets/images/Saly-22.svg" alt="" class="h-96 w-96 roket_img">
+            <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.53/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/QSxK0rPEqwb7l3n2/scene.splinecode"></spline-viewer> -->
+        </div>
+        </div>
+    </div>
+</div>
