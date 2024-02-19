@@ -11,7 +11,7 @@
 {
     height: 425px;
     width: 425px;
-    animation: spin 5s infinite linear;
+    animation: spin 2s infinite linear;
 }
 
 @keyframes spin{
