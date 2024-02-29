@@ -8,6 +8,7 @@ import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { LoginComponent } from './login/login.component';
     HeroSectionComponent,
     SignUpComponent,
     LoginComponent,
+    UserdashboardComponent,
   ],
   imports: [
     BrowserModule,

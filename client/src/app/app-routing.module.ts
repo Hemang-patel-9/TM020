@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 
 const routes: Routes = [
   {path: '', component: HeroSectionComponent},
@@ -12,6 +13,9 @@ const routes: Routes = [
   {
     path: 'login', component: LoginComponent
   },
+  {
+    path: 'userhome', component: UserdashboardComponent
+  }
 ];
 
 @NgModule({

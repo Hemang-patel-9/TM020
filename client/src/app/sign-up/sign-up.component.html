@@ -14,24 +14,24 @@
                             <td colspan="2">
                                 <label for="email" >Email address</label>
                                 <br>
-                                <input type="email" formControlName="email" class="border rounded-md h-10 border-black w-full mt-2 mb-5 mr-2">
+                                <input type="email" formControlName="email" class="border rounded-md h-10 border-black w-full mt-2 mb-5 mr-2 indent-4 text-lg ">
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <label for="password" >Password</label>
                                 <br>
-                                <input type="password" formControlName="password" class="border rounded-md h-10 border-black w-full mt-2">
+                                <input type="password" formControlName="password" class="border rounded-md h-10 border-black w-full mt-2 indent-4 text-lg">
                             </td>
                             <td>
-                                <label for="password" class="ml-2">Confirm your password</label>
+                                <label for="confirmpassword" class="ml-2">Confirm your password</label>
                                 <br>
-                                <input type="password" formControlName="password" class="border rounded-md h-10 border-black w-full mt-2 ml-2">
+                                <input type="password" formControlName="confirmpassword" class="border rounded-md h-10 border-black w-full mt-2 ml-2 indent-4 text-lg">
                             </td>
                         </tr>
                     </table>
                     <div class="mt-2">Use 8 or more characters with a mix of letters, numbers & symbols</div>
-                    <div class="mt-4 flex flex-row gap-1"><input type="checkbox"> <label for=""> Remember Me</label></div>
+                    <div class="mt-4 flex gap-1"><input type="checkbox" formControlName="rememberMe"> <label for="rememberMe"> Remember Me</label></div>
                     <div class="flex-row flex my-10 justify-between items-center">
                         <div class="underline">log in instead</div>
                         <button type="submit" class="bg-zinc-400 rounded-full px-8 py-2 font-bold text-lg text-white hover:bg-blue-600">Create an account</button>
