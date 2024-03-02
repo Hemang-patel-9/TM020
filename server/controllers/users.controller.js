@@ -93,11 +93,31 @@ const deleteUser = async (req, res, next) => {
 		res.status(400).json({ message: "Please Enter Email and Password" });
 	}
 }
+const extraData = async(req,res,next)=>{
+	try
+	{
+		const currentUser = await User.findOne({_id:req.user._id});
 
+		currentUser.profession = req.body.selectedOption.text;
+		currentUser.interest.frontend = req.body.frontendData;
+		currentUser.interest.backend = req.body.backendData;
+		currentUser.interest.database = req.body.databaseData;
+		currentUser.interest.other = req.body.optionData;
+
+		await currentUser.save();
+
+		res.status(200).json({ message: "User updated" });;
+	}
+	catch(err)
+	{
+		res.status(500).json({message:err.message});
+	}
+}
 module.exports = {
 	addUser,
 	signin,
 	deleteUser,
+	extraData
 }
 
 

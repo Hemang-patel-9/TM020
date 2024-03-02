@@ -1,27 +1,26 @@
-const jwt = require('jsonwebtoken');
 const user = require('../models/users.model');
+const jwt = require('jsonwebtoken');
 
-const authenticate = async(req,res,next)=>{
-	try{
-		let token;
+const authenticate = async (req, res, next) => {
+	try {
+		let token, currentUser;
 
-		if(req.cookies.jwt){
+		if (req.cookies.jwt) {
+
 			token = req.cookies.jwt;
+			const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
+			currentUser = await user.findOne({ _id: verifyToken._id });
 		}
 
-		const verifyToken = jwt.verify(token,process.env.SECRET_KEY);
-		const currentUser = await user.findOne({_id:verifyToken._id});
-
 		console.log("MiddleWare");
-		console.log(currentUser);
-		
 		req.user = currentUser;
 
 		next();
 	}
-	catch(err)
-	{
+	catch (err) {
 		console.log(err);
 		return res.status(500).send(err);
 	}
 }
+
+module.exports = authenticate;
