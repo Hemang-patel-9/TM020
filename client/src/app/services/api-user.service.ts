@@ -12,4 +12,8 @@ export class ApiUserService {
   register(user:any){
     return this._http.post(this.apiurl+"/user",user);
   }
+  extradata(user:any)
+  {
+    return this._http.patch(this.apiurl +"/user/addExtraData",user);
+  }
 }

@@ -59,7 +59,8 @@ const signin = async (req, res, next) => {
 
 			res.cookie('jwt', token, {
 				maxAge: 15 * 60 * 1000,
-				http: true
+				http: true,
+				secure:true
 			});
 
 			res.status(200).json(user);

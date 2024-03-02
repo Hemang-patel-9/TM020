@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 // import { ToggleGroup } from 'toggle-group';
 import AOS from 'aos';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ApiUserService } from '../services/api-user.service';
+import { Router } from '@angular/router';
+import { CookieService} from "ngx-cookie-service";
+
 // import { MatDialog } from '@angular/material/dialog';
 interface Option {
   image: string;
@@ -33,8 +37,10 @@ export class WelcomeUserPageComponent  implements OnInit{
   userinfoForm = new FormGroup(
     {
       userName : new FormControl('', Validators.required),
-      frontendData : new FormControl([]),
-      backendData : new FormControl([]),
+      frontendData : new FormControl([String]),
+      backendData : new FormControl([String]),
+      databaseData : new FormControl([String]),
+      optionData : new FormControl([String]),
       selectedOption : new FormControl(null, Validators.required)
     }
   )
@@ -126,37 +132,61 @@ export class WelcomeUserPageComponent  implements OnInit{
     {name : 'Digital Marketing', img: ''},
   ]
 
-  gotoNextStep() {
-    console.log("click");
-  
-    console.log("outer : "+this.userinfoForm.get('userName')?.value);
+  constructor(private _api: ApiUserService, private _router: Router, private cookieService: CookieService) { }
+
+
+  gotoNextStep() {  
     if (this.userinfoForm) {
-      console.log(this.userinfoForm.get('userName')?.value);
       this.currentStep++;
-    }
-    console.log(this.userinfoForm.value);
-    
+    }    
   }
 
-  selectLanguage(language: string) {
+  selectLanguage(language: any) {
     this.selectedLanguage = language;
     (this.userinfoForm.get('frontendData') as FormControl).setValue = this.selectLanguage;
+    this.userinfoForm.value.frontendData?.push(language);
   }
-  
+  backEndClick(language:any)
+  {
+    this.selectedLanguage = language;
+    (this.userinfoForm.get('backendData') as FormControl).setValue = this.selectLanguage;
+    this.userinfoForm.value.backendData?.push(language);
+  }
+  databaseClick(language:any)
+  {
+    this.selectedLanguage = language;
+    (this.userinfoForm.get('databaseData') as FormControl).setValue = this.selectLanguage;
+    this.userinfoForm.value.databaseData?.push(language);
+  }
+  optionClick(language:any)
+  {
+    this.selectedLanguage = language;
+    (this.userinfoForm.get('optionData') as FormControl).setValue = this.selectLanguage;
+    this.userinfoForm.value.optionData?.push(language);
+  }
   selectOption(option: Option) {
     (this.userinfoForm.get('selectedOption') as FormControl).setValue(option);
-    console.log(option.text);
   }
 
   // frontendDataSet(option : string)
   // {
-  //   (this.userinfoForm.get('frontendData') as FormControl).setValue(option);
+    // (this.userinfoForm.get('frontendData') as FormControl).setValue(option);
   // }
 
   gotoNextTopic() {
     this.languageStep++;
     console.log(this.userinfoForm.value);
-    
+    this.selectedLanguage=null;
   }
-  
+
+  saveData()
+  {
+    this.cookieService.set("jwt","hemang",{secure:true,expires:900000});
+    console.log(this.userinfoForm.value);
+    this._api.extradata(this.userinfoForm.value).subscribe((res) => {
+
+      this._router.navigate(['/userhome'])
+    });
+    console.log("extra data called!");
+  }
 }

@@ -43,5 +43,5 @@ export class SignUpComponent implements OnInit {
       this._router.navigate(['/welcomeuser'])
     }); 
   }
-
+  
 }

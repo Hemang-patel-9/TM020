@@ -91,11 +91,11 @@
             <div class="text-3xl">Backend</div>
             <div class="text-xs font-thin">you can either select or skip</div>
         </div>
-        <div class="text-yellow-300 text-base flex justify-end mr-64 -mt-10"><button (click)="gotoNextTopic()">skip</button></div>
+        <div class="text-yellow-300 text-base flex justify-end mr-64 -mt-10"><button (click)="gotoNextTopic()">{{ selectedLanguage ? 'Next' : 'Skip' }}</button></div>
         <div class="flex flex-col justify-center items-center pt-20">
             <div class="grid grid-cols-5 gap-5">
                 <div *ngFor="let temp of backendDataList; let i = index">
-                    <div class="bg-black h-28 w-28 text-white font-bold text-xl flex justify-center items-center rounded-2xl" *ngIf="i < 10">
+                    <div class="bg-black h-28 w-28 text-white font-bold text-xl flex justify-center items-center rounded-2xl" *ngIf="i < 10" (click)="backEndClick(temp.name)">
                         {{ temp.name }}
                     </div>
                 </div>
@@ -108,11 +108,11 @@
             <div class="text-3xl">Database</div>
             <div class="text-xs font-thin">you can either select or skip</div>
         </div>
-        <div class="text-yellow-300 text-base flex justify-end mr-64 -mt-10"><button (click)="gotoNextTopic()">skip</button></div>
+        <div class="text-yellow-300 text-base flex justify-end mr-64 -mt-10"><button (click)="gotoNextTopic()">{{ selectedLanguage ? 'Next' : 'Skip' }}</button></div>
         <div class="flex flex-col justify-center items-center pt-20">
             <div class="grid grid-cols-5 gap-5">
                 <div *ngFor="let temp of databaseDataList; let i = index">
-                    <div class="bg-black h-28 w-28 text-white font-bold text-xl flex justify-center items-center rounded-2xl" *ngIf="i < 10">
+                    <div class="bg-black h-28 w-28 text-white font-bold text-xl flex justify-center items-center rounded-2xl" *ngIf="i < 10" (click)="databaseClick(temp.name)">
                         {{ temp.name }}
                     </div>
                 </div>
@@ -125,11 +125,11 @@
             <div class="text-3xl">Other</div>
             <div class="text-xs font-thin">you can either select or skip</div>
         </div>
-        <div class="text-yellow-300 text-base flex justify-end mr-64 -mt-10"><button routerLink="/userhome">skip</button></div>
+        <div class="text-yellow-300 text-base flex justify-end mr-64 -mt-10"><button routerLink="/userhome" (click)="saveData()">{{ selectedLanguage ? 'Next' : 'Skip' }}</button></div>
         <div class="flex flex-col justify-center items-center pt-20">
             <div class="grid grid-cols-5 gap-5">
                 <div *ngFor="let temp of otherDataList; let i = index">
-                    <div class="bg-black h-28 w-28 text-white font-bold text-xl flex justify-center items-center rounded-2xl" *ngIf="i < 10">
+                    <div class="bg-black h-28 w-28 text-white font-bold text-xl flex justify-center items-center rounded-2xl" *ngIf="i < 10" (click)="optionClick(temp.name)">
                         {{ temp.name }}
                     </div>
                 </div>
