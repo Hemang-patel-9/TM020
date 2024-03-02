@@ -2,7 +2,7 @@ const FAQ = require('../models/faqs.model');
 const User = require('../models/users.model');
 const bcrypt = require('bcryptjs');
 
-async function addUser(req, res, next) {
+const addUser=async(req, res, next) =>{
 	const body = req.body;
 	if (body.name && body.email && body.password) {
 		const userExist = await User.findOne({ email: req.body.email });

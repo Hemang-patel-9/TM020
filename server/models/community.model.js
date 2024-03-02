@@ -40,13 +40,7 @@ const communitySchema = mongoose.Schema({
 
 
 });
-//community schema
 
-/**
- * name:String,
- * topics:array of string
- * members::array of string [emails]
- * admins:array of string [emails]
- * material:[files]
- * chats:[external schemas]
- */
+const Community = mongoose.model("communities",communitySchema);
+
+module.exports = Community;
