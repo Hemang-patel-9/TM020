@@ -18,8 +18,6 @@ export class WelcomeUserPageComponent  implements OnInit{
   ngOnInit(): void {
       AOS.init();
   }
-
-
   userinfoForm = new FormGroup(
     {
       userName : new FormControl(''),
