@@ -1,6 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import AOS from 'aos';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hero-section',
@@ -10,5 +11,11 @@ import AOS from 'aos';
 export class HeroSectionComponent implements OnInit {
   ngOnInit(): void {
       AOS.init();
+  }
+
+  constructor(private router: Router) { }
+
+  navigateToCourses() {
+    this.router.navigate(['/hero-courses']);
   }
 }

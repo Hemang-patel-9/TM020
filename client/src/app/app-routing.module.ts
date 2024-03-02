@@ -5,7 +5,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { WelcomeUserPageComponent } from './welcome-user-page/welcome-user-page.component';
-import { EditorComponent } from './editor/editor.component';
+import { HeroCoursesComponent } from './hero-courses/hero-courses.component';
 
 const routes: Routes = [
   {path: '', component: HeroSectionComponent},
@@ -22,7 +22,7 @@ const routes: Routes = [
     path: 'welcomeuser', component: WelcomeUserPageComponent
   },
   {
-    path: 'editor',component:EditorComponent
+    path: 'hero-courses', component: HeroCoursesComponent
   }
 ];
 

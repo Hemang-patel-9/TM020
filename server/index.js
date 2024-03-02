@@ -6,8 +6,13 @@ const { connectMongodb } = require("./connection");
 const userRouter = require("./routes/users.routes");
 const FAQrouter = require("./routes/faqs.router");
 const GlobalQuiz = require("./routes/globalQuiz.router");
+const cookieParser = require('cookie-parser');
+const dotenv = require('dotenv')
+
+dotenv.config({path: './config.env'})
 
 app.use(cors());
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.json());
 app.use(bodyParser.json());

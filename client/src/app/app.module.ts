@@ -4,26 +4,25 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { LoginComponent } from './login/login.component';
+import { RouterModule } from '@angular/router';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { WelcomeUserPageComponent } from './welcome-user-page/welcome-user-page.component';
 import { CommonModule } from '@angular/common';
-import { MatDialogModule } from '@angular/material/dialog';
-import {MatButtonModule} from '@angular/material/button';
-import { EditorComponent } from './editor/editor.component';
-
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { HeroSectionComponent } from './hero-section/hero-section.component';
+import { HeroCoursesComponent } from './hero-courses/hero-courses.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    HeroSectionComponent,
-    SignUpComponent,
-    LoginComponent,
     UserdashboardComponent,
     WelcomeUserPageComponent,
-    EditorComponent,
+    LoginComponent,
+    SignUpComponent,
+    HeroSectionComponent,
+    HeroCoursesComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,9 +30,9 @@ import { EditorComponent } from './editor/editor.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    RouterModule,
     CommonModule,
-    MatDialogModule,
-    MatButtonModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

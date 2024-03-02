@@ -1,10 +1,11 @@
-const FAQ = require('../models/faqs.model');
 const User = require('../models/users.model');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 const addUser=async(req, res, next) =>{
 	const body = req.body;
-	if (body.name && body.email && body.password) {
+	console.log(body);
+	if (body.email && body.password) {
 		const userExist = await User.findOne({ email: req.body.email });
 
 		if (userExist) {
@@ -12,7 +13,18 @@ const addUser=async(req, res, next) =>{
 		}
 
 		try {
-			const user = await User.create(req.body);
+			const user = await User.create({email:body.email,password:body.password});
+
+			
+			let token = jwt.sign({ _id: this._id }, process.env.SECRET_KEY);
+			user.tokens = user.tokens.concat({ token: token });
+			
+			res.cookie('jwt',token,{
+				maxAge: 15*60*1000,
+				http:true
+			});
+			await user.save();
+
 			res.status(200).json(user);
 		}
 		catch (err) {
@@ -40,6 +52,16 @@ const signin = async (req, res, next) => {
 				return res.status(400).send({ message: 'Invalid details!' });
 			}
 
+			let token = jwt.sign({ _id: this._id }, process.env.SECRET_KEY);
+			user.tokens = user.tokens.concat({ token: token });
+
+			await user.save();
+
+			res.cookie('jwt', token, {
+				maxAge: 15 * 60 * 1000,
+				http: true
+			});
+
 			res.status(200).json(user);
 		}
 		catch (err) {
@@ -50,6 +72,7 @@ const signin = async (req, res, next) => {
 		res.status(400).json({ message: "Please Enter Email and Password" });
 	}
 }
+
 const deleteUser = async (req, res, next) => {
 	if (req.params.id) {
 		try {

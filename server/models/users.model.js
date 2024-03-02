@@ -43,8 +43,6 @@ const courseSchema = mongoose.Schema({
 const userSchema = mongoose.Schema({
 	name: {
 		type: String,
-		required: true,
-		require:true
 	},
 	email: {
 		type: String,
@@ -54,8 +52,7 @@ const userSchema = mongoose.Schema({
 	password: {
 		type: String,
 		required: true,
-		minLength: 8,
-		maxLength: 30
+		minLength: 8
 	},
 	image:
 	{
@@ -100,13 +97,15 @@ const userSchema = mongoose.Schema({
 		type: [{ data: Buffer, contentType: String }]
 	},
 	quizeResult: [quizSchema],
-	courses: [courseSchema]
+	courses: [courseSchema],
+	tokens: [{
+		token: {
+			type: String
+		}
+	}]
 });
 
 userSchema.pre('save', async function (next) {
-	console.log("hey from schema middleware");
-	console.log(this.password);
-
 	if (this.isModified('password')) {
 		this.password = await bcrypt.hash(this.password, 10);
 	}

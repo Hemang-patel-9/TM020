@@ -10,13 +10,13 @@
             </div>
             <div class="flex gap-5 text-2xl font-bold">
                 <div>Home</div>
-                <div>Courses</div>
+                <div (click)="navigateToCourses()" class="cursor-pointer">Courses</div>
                 <div>Quiz</div>
                 <div>About</div>
                 <div>Help</div>
             </div>
             <div class="pr-10">
-                <button class="rounded-3xl px-8 py-1 text-black bg-yellow-400 font-bold">Login</button>
+                <button class="rounded-3xl px-8 py-1 text-black bg-yellow-400 font-bold" routerLink="/signup">Login</button>
             </div>
         </div>
         <div class="flex flex-row justify-center items-center relative gap-14 pt-10 pl-32" data-aos="fade-up" data-aos-duration="3000">
@@ -168,7 +168,7 @@
             enriches students’ academic and social experiences by fostering community, 
             promoting collaboration, and offering personalized resources.
             Aspiring to be the premier global student hub, we are committed to innovation, 
-            user-friendliness, and enhancing student life. 
+            user-friendliness, and enhancing student life. 
             We envision a future where all students, irrespective of their 
             location or discipline,  have the necessary resources, support, 
             and community to excel both acadically and socially.</div>

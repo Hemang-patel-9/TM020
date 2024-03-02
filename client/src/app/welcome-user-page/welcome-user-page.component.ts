@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ToggleGroup } from 'toggle-group';
+// import { ToggleGroup } from 'toggle-group';
 import AOS from 'aos';
-import { FormControl, FormGroup } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+// import { MatDialog } from '@angular/material/dialog';
+interface Option {
+  image: string;
+  text: string;
+}
 @Component({
   selector: 'app-welcome-user-page',
   templateUrl: './welcome-user-page.component.html',
@@ -13,19 +16,26 @@ export class WelcomeUserPageComponent  implements OnInit{
 
   currentStep = 1;
   languageStep = 1;
-  constructor(private dialogRef : MatDialog){}
+  selectedLanguage: string | null = null;
+  options: Option[] = [
+    {image: '../../assets/images/Group 3594.svg', text: 'Designer'},
+    {image: '../../assets/images/Group 3595.svg', text: 'Developer'},
+    {image: '../../assets/images/Group 3596.svg', text: 'Freelancer'},
+    {image: '../../assets/images/Group 3598.svg', text: 'Other'}
+  ];
+  // constructor(private dialogRef : MatDialog){}
 
   ngOnInit(): void {
       AOS.init();
   }
+
+
   userinfoForm = new FormGroup(
     {
-      userName : new FormControl(''),
-      professionInfo : new FormControl(''),
+      userName : new FormControl('', Validators.required),
       frontendData : new FormControl([]),
       backendData : new FormControl([]),
-      databaseData : new FormControl([]),
-      otherData : new FormControl([]),
+      selectedOption : new FormControl(null, Validators.required)
     }
   )
 
@@ -116,12 +126,37 @@ export class WelcomeUserPageComponent  implements OnInit{
     {name : 'Digital Marketing', img: ''},
   ]
 
-  gotoNextStep(){
-    this.currentStep++;
+  gotoNextStep() {
+    console.log("click");
+  
+    console.log("outer : "+this.userinfoForm.get('userName')?.value);
+    if (this.userinfoForm) {
+      console.log(this.userinfoForm.get('userName')?.value);
+      this.currentStep++;
+    }
+    console.log(this.userinfoForm.value);
+    
   }
+
+  selectLanguage(language: string) {
+    this.selectedLanguage = language;
+    (this.userinfoForm.get('frontendData') as FormControl).setValue = this.selectLanguage;
+  }
+  
+  selectOption(option: Option) {
+    (this.userinfoForm.get('selectedOption') as FormControl).setValue(option);
+    console.log(option.text);
+  }
+
+  // frontendDataSet(option : string)
+  // {
+  //   (this.userinfoForm.get('frontendData') as FormControl).setValue(option);
+  // }
 
   gotoNextTopic() {
     this.languageStep++;
+    console.log(this.userinfoForm.value);
+    
   }
   
 }
