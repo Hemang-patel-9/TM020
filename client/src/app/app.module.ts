@@ -8,7 +8,11 @@ import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
-import { RoughComponent } from './rough/rough.component';
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { WelcomeUserPageComponent } from './welcome-user-page/welcome-user-page.component';
+import { CommonModule } from '@angular/common';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -16,14 +20,18 @@ import { RoughComponent } from './rough/rough.component';
     HeroSectionComponent,
     SignUpComponent,
     LoginComponent,
-    RoughComponent,
+    UserdashboardComponent,
+    WelcomeUserPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CommonModule,
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

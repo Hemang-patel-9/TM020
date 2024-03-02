@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit{
     {
       email : new FormControl(''),
       password : new FormControl(''),
-      rememberMe:new FormControl(false)
+      remeberME : new FormControl(false)
     }
   )
 
