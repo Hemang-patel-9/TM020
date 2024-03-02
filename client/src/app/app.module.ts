@@ -13,6 +13,7 @@ import { WelcomeUserPageComponent } from './welcome-user-page/welcome-user-page.
 import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
+import { EditorComponent } from './editor/editor.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {MatButtonModule} from '@angular/material/button';
     LoginComponent,
     UserdashboardComponent,
     WelcomeUserPageComponent,
+    EditorComponent,
   ],
   imports: [
     BrowserModule,

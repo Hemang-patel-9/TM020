@@ -39,7 +39,9 @@
               "src/styles.css",
               "node_modules/aos/dist/aos.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/editor.js"
+            ]
           },
           "configurations": {
             "production": {
