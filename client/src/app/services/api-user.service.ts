@@ -6,14 +6,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiUserService {
   apiurl = "http://localhost:8000"
+  email: any = "";
 
-  constructor(private _http:HttpClient) {}
+  constructor(private _http: HttpClient) { }
 
-  register(user:any){
-    return this._http.post(this.apiurl+"/user",user);
+  register(user: any) {
+    return this._http.post(this.apiurl + "/user", user);
   }
-  extradata(user:any)
-  {
-    return this._http.patch(this.apiurl +"/user/addExtraData",user);
+  extradata(user: any) {
+    return this._http.patch(this.apiurl + "/user/" + this.email, user);
   }
 }

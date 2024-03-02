@@ -39,21 +39,6 @@ const courseSchema = mongoose.Schema({
 		default: false
 	}
 });
-const interestSchema = mongoose.Schema({
-	frontend:{
-		type:[String]
-	},
-	backend:{
-		type:[String]
-	},
-	database:{
-		type:[String]
-	},
-	other:{
-		type:[String]
-	}
-
-});
 
 const userSchema = mongoose.Schema({
 	name: {
@@ -80,7 +65,18 @@ const userSchema = mongoose.Schema({
 	},
 	interest:
 	{
-		type: { interestSchema }
+		frontend: {
+			type: [String]
+		},
+		backend: {
+			type: [String]
+		},
+		database: {
+			type: [String]
+		},
+		other: {
+			type: [String]
+		}
 	},
 	profession:
 	{

@@ -18,7 +18,7 @@ export class SignUpComponent implements OnInit {
       rememberMe: new FormControl(false)
     }
   );
-  notMatch=false
+  notMatch = false
 
   constructor(private _api: ApiUserService, private _router: Router) { }
 
@@ -33,15 +33,17 @@ export class SignUpComponent implements OnInit {
   adduser() {
 
     console.log(this.signupForm.value);
-    
-    if (this.signupForm.value.password != this.signupForm.value.confirmpassword){
+
+    if (this.signupForm.value.password != this.signupForm.value.confirmpassword) {
       location.reload();
       return;
     }
-    
-    this._api.register(this.signupForm.value).subscribe((res)=>{
+
+    this._api.register(this.signupForm.value).subscribe((res) => {
       this._router.navigate(['/welcomeuser'])
-    }); 
+    });
+
+    this._api.email = this.signupForm.value.email
   }
-  
+
 }
