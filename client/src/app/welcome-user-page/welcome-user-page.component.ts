@@ -17,7 +17,6 @@ export class WelcomeUserPageComponent  implements OnInit{
   currentStep = 1;
   languageStep = 1;
   selectedLanguage: string | null = null;
-  flist: any[] = [];
   options: Option[] = [
     {image: '../../assets/images/Group 3594.svg', text: 'Designer'},
     {image: '../../assets/images/Group 3595.svg', text: 'Developer'},
@@ -34,7 +33,7 @@ export class WelcomeUserPageComponent  implements OnInit{
   userinfoForm = new FormGroup(
     {
       userName : new FormControl('', Validators.required),
-      frontendData : new FormControl(Array<String>),
+      frontendData : new FormControl([]),
       backendData : new FormControl([]),
       selectedOption : new FormControl(null, Validators.required)
     }
@@ -142,8 +141,7 @@ export class WelcomeUserPageComponent  implements OnInit{
   selectLanguage(language: string) {
     this.selectedLanguage = language;
     console.log(this.selectedLanguage);
-    this.flist.push(language);
-    (this.userinfoForm.get('frontendData') as FormControl).setValue = this.flist;
+    (this.userinfoForm.get('frontendData') as FormControl).setValue = this.selectLanguage;
   }
   
   selectOption(option: Option) {

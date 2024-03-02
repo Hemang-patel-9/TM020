@@ -1,0 +1,16 @@
+.your-class-name::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .your-class-name::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .your-class-name::-webkit-scrollbar-thumb {
+    background: #000000;
+  }
+  
+  .your-class-name::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
