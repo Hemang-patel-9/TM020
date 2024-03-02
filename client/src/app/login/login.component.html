@@ -14,7 +14,7 @@
                             <td colspan="2">
                                 <label for="email" >Email address or Conatct Number</label>
                                 <br>
-                                <input type="email" formControlName="email" class="border rounded-md h-10 border-black w-full mt-2 mb-5 mr-2 indent-4 text-lg focus:outline-none focus:border-none">
+                                <input type="email" formControlName="email" class="border rounded-md h-10 border-black w-full mt-2 mb-5 mr-2 indent-4 text-lg">
                             </td>
                         </tr>
                         <tr>
@@ -26,9 +26,10 @@
                         </tr>
                     </table>
                     <div class="mt-2">Use 8 or more characters with a mix of letters, numbers & symbols</div>
-                    <div class="mt-4 flex flex-row gap-1"><input type="checkbox"> <label for=""> Remember Me</label></div>
+                    <div class="mt-4 flex flex-row gap-1"><input type="checkbox" formControlName="remeberME"> <label for="remeberME"> Remember Me</label></div>
                     <div class="flex-row flex my-10 justify-between items-center">
-                        <div class="underline">sign up instead</div>
+                        <div><button class="underline">continue with Google</button></div>
+                        <div class="underline"><a href="" routerLink="/signup" >sign up instead</a></div>
                         <button type="submit" class="bg-zinc-400 rounded-full px-8 py-2 font-bold text-lg text-white hover:bg-blue-600">Log in</button>
                     </div>
                 </form>
