@@ -1,0 +1,110 @@
+<div style="background-color: #262626" class="h-screen">
+	<div class="header pt-10">
+		<div class="flex flex-row justify-between gap-2 align-middle items-center bg-black text-white px-10 py-1">
+			<div class="flex flex-row justify-center items-center">
+				<div><img src="../../assets/images/Rectangle 42.svg" alt="" /></div>
+				<div class="font-bold flex-col flex gap-0 text-sm tracking-widest">
+					ACADEMIA HUB
+					<span class="font-semibold text-xs tracking-normal">
+						Learn, Collaborate, Succeed
+					</span>
+				</div>
+			</div>
+			<div class="flex flex-row gap-4 text-yellow-300 text-2xl">
+				<div class="fa fa-sign-out"></div>
+				<div class="fa fa-bell-o"></div>
+				<div class="fa fa-user"></div>
+			</div>
+		</div>
+		<div class="flex flex-row justify-center gap-10 text-base text-white py-3" style="background-color: #333333">
+			<div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60" routerLink="/userhome">
+				Home
+			</div>
+			<div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60" routerLink="/usercommunity">
+				Community
+			</div>
+			<div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60" routerLink="/userquiz">
+				Quiz
+			</div>
+			<div class="border-b-green-600 font-bold border-b-2">Courses</div>
+			<div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60" routerLink="/usertechtokens">
+				TechTokens
+			</div>
+			<div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60" routerLink="/help">
+				Help
+			</div>
+		</div>
+	</div>
+	<div class="flex justify-center p-2 mt-5" *ngIf="!selectedCourse && !selectedChapter">
+		<div class="grid grid-cols-4 gap-4">
+			<div class="" *ngFor="let temp of courseList" (click)="selectCourse(temp)">
+				<div class="bg-black text-white shadow-lg w-64 h-36 rounded-xl flex flex-col">
+					<div class="flex px-3 pt-3 gap-3">
+						<div>
+							<img src="../../assets/images/react-original.png" alt="" class="w-20 h-20" />
+						</div>
+						<div class="flex flex-col text-xs">
+							<div class="font-bold text-sm">{{ temp.name }}</div>
+							<div>Quiz | Videos | Notes</div>
+							<div>Duration : 1min</div>
+						</div>
+					</div>
+					<div class="flex justify-between m-5 items-center">
+						<div class="bg-gray-300 w-48 h-1.5 rounded-full">
+							<div class="bg-yellow-300 h-full rounded-full" [style.width.%]="temp.progress"></div>
+						</div>
+						<div class="text-xs">{{ temp.progress }}%</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="selectedCourse && !selectedChapter">
+		<div class="flex flex-col bg-black text-white p-10">
+			<div class="flex w-1/2 ml-20 gap-10 items-center justify-between px-10 pb-10">
+				<div class="fa fa-angle-left" (click)="goBack()"></div>
+				<div class="text-3xl font-bold text-blue-500">{{ selectedCourse.name }}</div>
+			</div>
+			<div class="flex flex-row gap-4 justify-center items-center text-sm">
+				<div class="w-40 h-40 flex flex-col justify-center items-center" style="background-color: #262626;">
+					<div class="text-yellow-400 font-bold mb-4 text-xl">Chapters</div>
+					<div *ngFor="let chapter of selectedCourse.chapters" (click)="selectChapter(chapter)">{{
+						chapter.name }}</div>
+				</div>
+				<div class="w-40 h-40 flex flex-col justify-center items-center" *ngIf="!selectedChapter"
+					style="background-color: #262626;">
+					<div class="text-yellow-400 font-bold mb-4 text-xl">Videos</div>
+					<div *ngFor="let video of selectedCourse.videos">{{ video }}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="selectedChapter" class="flex flex-col justify-center text-white">
+		<button (click)="goBack()">Back</button>
+		<h1>{{ selectedChapter.name }}</h1>
+		<div>
+			<!-- Embed the PDF using the selectedChapter.pdf URL -->
+			<object data="../../assets/html/ch1.pdf" type="application/pdf" width="100%" height="800px"></object>
+		</div>
+	</div>
+</div>
+
+
+<!-- <button (click)="goBack()">Back</button>
+    <h1>{{ selectedCourse.name }}</h1>
+     Add more course details here 
+    <div>
+      <h2>Chapters</h2>
+      <ul>
+        <li
+          *ngFor="let chapter of selectedCourse.chapters"
+          (click)="selectChapter(chapter)"
+        >
+          {{ chapter.name }}
+        </li>
+      </ul>
+      <div *ngIf="!selectedChapter">
+        <h2>Videos</h2>
+        <div *ngFor="let video of selectedCourse.videos">{{ video }}</div>
+      </div>
+    </div> -->

@@ -1,4 +1,4 @@
-<div class="main overflow-hidden" style="height: auto; width: 100%">
+<div class="main_page overflow-x-hidden" style="height: auto; width: 100%">
     <div class="first_page" style="background-color: #286EE6;">
         <div class=" absolute w-full h-screen" style="background-color: #286EE6;">
             <img src="../../assets/images/BACKGROUNDLOCK.svg" alt="" class="h-screen">
@@ -6,28 +6,31 @@
         <div class="flex flex-row justify-between text-white py-8 px-5 relative">
             <div class="flex flex-row justify-center gap-2 align-middle items-center">
                 <div><img src="../../assets/images/Rectangle 42.svg" alt=""></div>
-                <div class="font-bold flex-col flex gap-0 text-sm tracking-widest" >ACADEMIA HUB <span class="font-semibold text-xs tracking-normal"> Learn, Collaborate, Succeed </span></div>
+                <div class="font-bold flex-col flex gap-0 text-sm tracking-widest">ACADEMIA HUB <span
+                        class="font-semibold text-xs tracking-normal"> Learn, Collaborate, Succeed </span></div>
             </div>
-            <div class="flex gap-5 text-2xl font-bold">
-                <div>Home</div>
-                <div (click)="navigateToCourses()" class="cursor-pointer">Courses</div>
-                <div>Quiz</div>
-                <div>About</div>
-                <div>Help</div>
+            <div class="flex gap-5 text-2xl font-bold py-2">
+                <div class="border-b-2 border-white">Home</div>
+                <div routerLink="/hero-courses" class="hover:cursor-pointer">Courses</div>
+                <div routerLink="/hero-quiz" class="hover:cursor-pointer">Quiz</div>
+                <div routerLink="hero-about" class="hover:cursor-pointer">About</div>
+                <div routerLink="/hero-help" class="hover:cursor-pointer">Help</div>
             </div>
             <div class="pr-10">
-                <button class="rounded-3xl px-8 py-1 text-black bg-yellow-400 font-bold" routerLink="/signup">Login</button>
+                <button class="rounded-3xl px-8 py-1 text-black bg-yellow-400 font-bold"
+                    routerLink="/login">Login</button>
             </div>
         </div>
-        <div class="flex flex-row justify-center items-center relative gap-14 pt-10 pl-32" data-aos="fade-up" data-aos-duration="3000">
-            <div class="flex flex-col gap-5 text-white mt-14 text-end w-1/2"  >
+        <div class="flex flex-row justify-center items-center relative gap-14 pt-10 pl-32" data-aos="fade-up"
+            data-aos-duration="3000">
+            <div class="flex flex-col gap-5 text-white mt-14 text-end w-1/2">
                 <span class="text-4xl font-bold">Venture into the Vast <br>
                     Universe of Technology!
                 </span>
-                <span class="text-2xl">Join thousands of developers, programors who 
-                        are there to help your doubts and provide a 
-                        analytical approach to the problem. 
-                        Embark on the courses with a pinch of quizes
+                <span class="text-2xl">Join thousands of developers, programors who
+                    are there to help your doubts and provide a
+                    analytical approach to the problem.
+                    Embark on the courses with a pinch of quizes
                 </span>
             </div>
             <div class="w-96 h-80" data-aos="zoom-in" data-aos-duration="3000">
@@ -36,14 +39,15 @@
         </div>
         <div class="flex flex-row justify-center w-full">
             <div class="relative flex justify-center mt-16">
-                <button class="rounded-full bg-black text-white font-bold px-28 py-2 text-2xl">Explore</button>
+                <button class="rounded-full bg-black text-white font-bold px-28 py-2 text-2xl"
+                    routerLink="/signup">Explore</button>
             </div>
             <div class="absolute flex justify-end h-72 right-0 mt-8">
                 <img src="../../assets/images/Cones-2-metallic.png" alt="">
             </div>
         </div>
     </div>
-    
+
     <div class="second_page h-screen py-20" style="background-color: #262626;">
         <div class="flex flex-row gap-16">
             <div class="h-screen" style="background-color: #262626;" data-aos="slide-right" data-aos-duration="3000">
@@ -53,16 +57,18 @@
                 <div class="relative -top-20">
                     <img src="../../assets/images/17.png" alt="" class="w-32 h-56">
                 </div>
-                <div class=" relative -top-80 ml-44" >
+                <div class=" relative -top-80 ml-44">
                     <img src="../../assets/images/1.png" alt="" class="h-80 w-72">
                     <img src="../../assets/images/card-progress.png" alt="" class="w-64 h-36 -mt-16 -ml-32">
                 </div>
             </div>
             <div class="flex flex-col gap-3 text-white justify-center " data-aos="slide-left" data-aos-duration="3000">
                 <span class="text-5xl font-bold">Wide Selection of <span class="text-green-300">Courses</span></span>
-                <span class="text-lg text-gray-400 mt-5">The Academia hub persoms analysics <br> n dhs hewbufr buwrieg5 bireg jkrbuei</span>
-                    <span class="font-bold">We offer Paid and free courses</span>
-                    <button class="bg-zinc-900 rounded-full px-20 py-2 text-lg w-fit mt-5">Book your course for free!</button>
+                <span class="text-lg text-gray-400 mt-5">The Academia hub persoms analysics <br> n dhs hewbufr buwrieg5
+                    bireg jkrbuei</span>
+                <span class="font-bold">We offer Paid and free courses</span>
+                <button class="bg-zinc-900 rounded-full px-20 py-2 text-lg w-fit mt-5" routerLink="/hero-courses">Book
+                    your course for free!</button>
             </div>
         </div>
     </div>
@@ -72,11 +78,12 @@
             <div class="flex" data-aos="fade-out" data-aos-duration="3000">
                 <div class="flex flex-col gap-3 text-white">
                     <div class="text-5xl font-bold">
-                    <span class="text-orange-400">Learning</span> on Trending Topics
-                </div>
-                <div class="text-lg text-end">The Academia hub persoms analysics 
-                    <br>
-                    n dhs hewbufr buwrieg5 bireg jkrbuei</div>
+                        <span class="text-orange-400">Learning</span> on Trending Topics
+                    </div>
+                    <div class="text-lg text-end">The Academia hub persoms analysics
+                        <br>
+                        n dhs hewbufr buwrieg5 bireg jkrbuei
+                    </div>
                 </div>
             </div>
             <div data-aos="fade-out" data-aos-duration="3000">
@@ -98,11 +105,13 @@
                 </div>
             </div>
             <div></div>
-            <div class="flex flex-col gap-3 text-white justify-center w-1/2" data-aos="zoom-out" data-aos-duration="3000">
-                <span class="text-5xl font-bold">Personalized <br><span class="text-orange-300">Group Community</span></span>
-                <span class="text-sm text-gray-400 mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore 
-                    magna aliqua. Ut enim ad minim veniam, quis nostrud 
+            <div class="flex flex-col gap-3 text-white justify-center w-1/2" data-aos="zoom-out"
+                data-aos-duration="3000">
+                <span class="text-5xl font-bold">Personalized <br><span class="text-orange-300">Group
+                        Community</span></span>
+                <span class="text-sm text-gray-400 mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud
                     exercitation ullamco laboris nisi ut aliquip ex ea </span>
             </div>
         </div>
@@ -110,24 +119,26 @@
 
     <div class="fifth_page h-fit" style="background-color: #262626;">
         <div class="flex flex-row items-center px-10">
-            <div class="flex flex-col gap-3 text-white justify-center w-1/2 text-end" data-aos="slide-left" data-aos-duration="3000">
-                <span class="text-5xl font-bold">A Customized 
+            <div class="flex flex-col gap-3 text-white justify-center w-1/2 text-end" data-aos="slide-left"
+                data-aos-duration="3000">
+                <span class="text-5xl font-bold">A Customized
                     <br><span class="text-blue-300">Dashboard</span></span>
-                <span class="text-sm text-gray-400 mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore 
-                    magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                <span class="text-sm text-gray-400 mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud
                     exercitation ullamco laboris nisi ut aliquip ex ea </span>
             </div>
             <div class="h-fit" data-aos="slide-right" data-aos-duration="3000">
                 <img src="../../assets/images/BRIX Templates.svg" alt="" class="" height="500px" width="500px">
-                <img src="../../assets/images/Spiral.png" alt="" class="w-40 h-40" style="margin-top: -480px; margin-left: 360px">
-                <img src="../../assets/images/Illustration.svg" alt="" class="w-48 h-48 mt-16 ml-16" >
+                <img src="../../assets/images/Spiral.png" alt="" class="w-40 h-40"
+                    style="margin-top: -480px; margin-left: 360px">
+                <img src="../../assets/images/Illustration.svg" alt="" class="w-48 h-48 mt-16 ml-16">
             </div>
         </div>
     </div>
 
     <div class="sixth_page h-screen" style="background-color: #262626;">
-        <div class="w-full text-5xl text-orange-400 font-bold flex justify-center py-10 pb-20" >
+        <div class="w-full text-5xl text-orange-400 font-bold flex justify-center py-10 pb-20">
             Courses Offered
         </div>
         <div class="flex flex-row justify-center" data-aos="zoom-in" data-aos-duration="3000">
@@ -136,7 +147,7 @@
             <img src="../../assets/images/1-2.svg" alt="" class="h-80 w-80">
         </div>
         <div class="w-full text-base text-black font-bold flex justify-center py-10 ">
-            <button class="bg-orange-400 rounded-full px-10 py-2">View More</button>
+            <button class="bg-orange-400 rounded-full px-10 py-2" routerLink="/hero-courses">View More</button>
         </div>
         <div class="flex w-full justify-end -mt-20">
             <img src="../../assets/images/Icosahedron.png" alt="" class="h-40 w-24">
@@ -154,7 +165,9 @@
             </div>
             <div class="w-1/2 flex flex-col gap-5 -ml-36" data-aos="zoom-in" data-aos-duration="3000">
                 <div class="font-bold text-5xl">Global <span class="text-blue-400">Quiz</span> Program</div>
-                <div class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi error ipsam facere atque dolor, laboriosam rerum nostrum autem et. Magni nobis deleniti aspernatur pariatur accusamus? Dolor voluptatibus voluptas corporis nobis!</div>
+                <div class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi error ipsam facere
+                    atque dolor, laboriosam rerum nostrum autem et. Magni nobis deleniti aspernatur pariatur accusamus?
+                    Dolor voluptatibus voluptas corporis nobis!</div>
             </div>
         </div>
     </div>
@@ -164,31 +177,36 @@
         <div class="w-full justify-end flex -mb-36 -ml-10 -mt-10">
             <img src="../../assets/images/Cone (2).png" alt="" class="w-48 h-48">
         </div>
-        <div class="bg-black mx-32 my-10 p-28 rounded-3xl text-white flex justify-center text-center text-xl" data-aos="zoom-out" data-aos-duration="3000">Our mission is to establish an inclusive and engaging online platform that 
-            enriches students’ academic and social experiences by fostering community, 
+        <div class="bg-black mx-32 my-10 p-28 rounded-3xl text-white flex justify-center text-center text-xl"
+            data-aos="zoom-out" data-aos-duration="3000">Our mission is to establish an inclusive and engaging online
+            platform that
+            enriches students’ academic and social experiences by fostering community,
             promoting collaboration, and offering personalized resources.
-            Aspiring to be the premier global student hub, we are committed to innovation, 
-            user-friendliness, and enhancing student life. 
-            We envision a future where all students, irrespective of their 
-            location or discipline,  have the necessary resources, support, 
+            Aspiring to be the premier global student hub, we are committed to innovation,
+            user-friendliness, and enhancing student life.
+            We envision a future where all students, irrespective of their
+            location or discipline, have the necessary resources, support,
             and community to excel both acadically and socially.</div>
-            <div class="-mt-40 ml-16">
-                <img src="../../assets/images/Cone-1.png" alt="" class="w-32 h-40">
-            </div>
+        <div class="-mt-40 ml-16">
+            <img src="../../assets/images/Cone-1.png" alt="" class="w-32 h-40">
+        </div>
     </div>
 
     <div class="nineth_page h-screen" style="background-color: #01031A;">
         <div class="w-full h-screen absolute">
             <img src="../../assets/images/Asset 12@5x 5.png" alt="" class="h-screen w-full">
         </div>
-        <div class="flex flex-row justify-center text-white relative h-screen w-full items-center"> 
+        <div class="flex flex-row justify-center text-white relative h-screen w-full items-center">
             <div class="flex flex-col gap-5 text-end w-1/2" data-aos="slide-right" data-aos-duration="3000">
-                <div class="text-5xl">Ready to Upgrade 
+                <div class="text-5xl">Ready to Upgrade
                     your Technical Skills?</div>
-                    <div class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nulla, dolores tempora debitis ipsum culpa blanditiis maxime eius vitae sint quos neque maiores, architecto fuga officiis aliquid dolore quo nihil!</div>
-                    <div >
-                        <button class="bg-green-600 px-20 py-2 text-base font-bold rounded-full">Start the journey</button>
-                    </div>
+                <div class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nulla, dolores tempora
+                    debitis ipsum culpa blanditiis maxime eius vitae sint quos neque maiores, architecto fuga officiis
+                    aliquid dolore quo nihil!</div>
+                <div>
+                    <button class="bg-green-600 px-20 py-2 text-base font-bold rounded-full" routerLink="/signup">Start
+                        the journey</button>
+                </div>
             </div>
             <div class="relative flex items-center" data-aos="slide-left" data-aos-duration="3000">
                 <img src="../../assets/images/2.png" alt="" class="-mt-40 -mr-40 z-0">
@@ -203,7 +221,8 @@
     </div>
 
     <div class="footer h-fit w-full py-20" style="background-color: #262626;">
-        <div class="flex flex-row justify-between text-white p-20 font-thin text-xs " data-aos="fade-up" data-aos-duration="3000">
+        <div class="flex flex-row justify-between text-white p-20 font-thin text-xs " data-aos="fade-up"
+            data-aos-duration="3000">
             <div class="flex flex-col  gap-3">
                 <div class="text-base font-bold">Academia Hub</div>
                 <br>
@@ -246,12 +265,13 @@
                 <div>Help</div>
             </div>
         </div>
-        <div class="flex justify-center w-full text-white flex-col items-center" data-aos="fade-up" data-aos-duration="3000">
+        <div class="flex justify-center w-full text-white flex-col items-center" data-aos="fade-up"
+            data-aos-duration="3000">
             <div class="text-lg font-bold">ACADEMIA HUB</div>
             <div class="text-xs font-thin">Learn, Collaborate, Succeed</div>
             <div class="text-xs font-thin mt-10">&#169; 2024 Academia Hub. All rights reserved.</div>
             <div class="mt-3"><img src="../../assets/images/socials.png" alt=""></div>
         </div>
     </div>
-    
+
 </div>

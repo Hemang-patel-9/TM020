@@ -3,6 +3,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 import AOS from 'aos'
 import { ApiUserService } from '../services/api-user.service';
 import { Router } from '@angular/router';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
+import 'firebase/auth';
+import {AuthService} from '../services/auth-google.service';
+
 
 @Component({
   selector: 'app-sign-up',
@@ -20,7 +24,7 @@ export class SignUpComponent implements OnInit {
   );
   notMatch = false
 
-  constructor(private _api: ApiUserService, private _router: Router) { }
+  constructor(private _api: ApiUserService, private _router: Router,private authService:AuthService) { }
 
   onSubmit() {
     console.log(this.signupForm.value);
@@ -31,7 +35,6 @@ export class SignUpComponent implements OnInit {
   }
 
   adduser() {
-
     console.log(this.signupForm.value);
 
     if (this.signupForm.value.password != this.signupForm.value.confirmpassword) {
@@ -43,7 +46,13 @@ export class SignUpComponent implements OnInit {
       this._router.navigate(['/welcomeuser'])
     });
 
-    this._api.email = this.signupForm.value.email
+    this._api.email = this.signupForm.value.email;
+  }
+
+  loginWithGoogle() {
+    // this.authService.GoogleAuth();
+    // const auth = getAuth();
+    // return signInWithPopup(auth, new GoogleAuthProvider());
   }
 
 }

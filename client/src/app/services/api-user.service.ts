@@ -13,7 +13,20 @@ export class ApiUserService {
   register(user: any) {
     return this._http.post(this.apiurl + "/user", user);
   }
+
+  signin(user: any) {
+    return this._http.post(this.apiurl + "/user/signin", user);
+  }
+
   extradata(user: any) {
     return this._http.patch(this.apiurl + "/user/" + this.email, user);
+  }
+
+  getOne() {
+    return this._http.get(this.apiurl + "/user/" + this.email);
+  }
+
+  vCall(){
+    return this._http.get(this.apiurl +"/user/videocall");
   }
 }

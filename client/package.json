@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "PORT=3001 react-scripts start",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -21,15 +21,18 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
+    "@zegocloud/zego-uikit-prebuilt": "^1.11.0",
     "angular-animations": "^0.11.0",
     "aos": "^2.3.4",
     "codemirror": "^6.0.1",
+    "firebase": "^10.8.1",
     "ngx-cookie": "^6.0.1",
     "ngx-cookie-service": "^17.1.0",
     "rxjs": "~7.8.0",
+    "socket.io-client": "^4.7.4",
     "toggle-group": "^1.0.5",
     "tslib": "^2.3.0",
-    "zone.js": "~0.14.2"
+    "zone.js": "^0.14.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.0.5",

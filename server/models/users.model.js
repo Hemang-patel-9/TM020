@@ -16,15 +16,11 @@ const quizSchema = mongoose.Schema({
 
 //course object
 const courseSchema = mongoose.Schema({
-	courseId:
-	{
-		type: mongoose.Schema.Types.ObjectId
-	},
 	courseName:
 	{
 		type: String
 	},
-	courseDone:
+	courseProgress:
 	{
 		type: Number
 	},

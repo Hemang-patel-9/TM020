@@ -1,31 +1,474 @@
-<div class="main" style="height: auto; width: 100%">
-    <div class="first_page" style="background-color: #286EE6;">
-        <div class=" absolute w-full h-screen" style="background-color: #F0DB4F;">
-            <img src="../../assets/images/hero-courses.svg" alt="" class="h-screen">
+<div class="main " style="height: auto; width: 100%">
+    <!-- Navbar -->
+    <div class="first_page pb-10" style="background-color: #f0db4f">
+        <div class="absolute w-full h-screen" style="background-color: #f0db4f">
+            <img src="../../assets/images/hero-courses.svg" alt="" class="h-screen" />
         </div>
         <div class="flex flex-row justify-between text-white py-8 px-5 relative">
             <div class="flex flex-row justify-center gap-2 align-middle items-center">
-                <div><img src="../../assets/images/Rectangle 42.svg" alt=""></div>
-                <div class="font-bold flex-col flex gap-0 text-sm tracking-widest" >ACADEMIA HUB <span class="font-semibold text-xs tracking-normal"> Learn, Collaborate, Succeed </span></div>
+                <div><img src="../../assets/images/Rectangle 42.svg" alt="" /></div>
+                <div class="font-bold flex-col flex gap-0 text-lg tracking-widest">
+                    ACADEMIA HUB
+                    <span class="font-semibold text-xs tracking-normal">
+                        Learn, Collaborate, Succeed
+                    </span>
+                </div>
             </div>
-            <div class="flex gap-5 text-2xl font-bold">
-                <div>Home</div>
-                <div class="cursor-pointer">Courses</div>
-                <div>Quiz</div>
-                <div>About</div>
-                <div>Help</div>
+            <div class="flex gap-5 text-2xl font-bold text-black py-2">
+                <div class="hover:cursor-pointer" routerLink="/">Home</div>
+                <div class="cursor-pointer border-b-2 border-black">Courses</div>
+                <div class="hover:cursor-pointer" routerLink="/hero-quiz">Quiz</div>
+                <div class="hover:cursor-pointer" routerLink="/hero-about">About</div>
+                <div class="hover:cursor-pointer" routerLink="/hero-help">Help</div>
             </div>
             <div class="pr-10">
-                <button class="rounded-3xl px-8 py-1 text-black bg-yellow-400 font-bold" routerLink="/signup">Login</button>
+                <button class="rounded-3xl px-8 py-1 text-black bg-yellow-400 font-bold" routerLink="/signup">
+                    Login
+                </button>
             </div>
         </div>
-        
-        <div class="flex flex-row justify-center w-full">
-            <div class="relative flex justify-center mt-16">
-                <button class="rounded-full bg-black text-white font-bold px-28 py-2 text-2xl">Explore</button>
+
+        <div class="text-center relative mt-11">
+            <span class="text-black text-5xl font-medium font-['Poppins']">Join Leading Courses for </span><span
+                class="text-emerald-600 text-5xl font-medium font-['Poppins']">free</span><span
+                class="text-black text-5xl font-medium font-['Poppins']">!</span>
+        </div>
+        <div class="mt-10 text-center text-black text-base font-medium font-['Poppins'] relative">
+            The Academia Hub offers Courses mainly in five categories, the user can
+            select any courses from these <br />categorized Fields, we ensure full
+            analyzation of each course
+        </div>
+
+        <div class="flex relative">
+
+            <div class="frontend flex-1 w-[261px] h-[211px] bg-green-500 rounded-[10px] m-6">
+                <div class="text-center text-white text-[40px] font-semibold font-['Poppins'] mt-16">
+                    Frontend
+                </div>
             </div>
-            <div class="absolute flex justify-end h-72 right-0 mt-8">
-                <img src="../../assets/images/Cones-2-metallic.png" alt="">
+            <div class="flex-1 w-[261px] h-[211px] bg-purple-600 rounded-[10px] m-6">
+                <div class="text-center text-white text-[40px] font-semibold font-['Poppins'] mt-16">
+                    Backend
+                </div>
+            </div>
+            <div class="flex-1 w-[261px] h-[211px] bg-orange-500 rounded-[10px] m-6">
+                <div class="text-center text-white text-[40px] font-semibold font-['Poppins'] mt-16">
+                    Database
+                </div>
+            </div>
+            <div class="flex-1 w-[261px] h-[211px] bg-blue-500 rounded-[10px] m-6">
+                <div class="text-center text-white text-[40px] font-semibold font-['Poppins'] mt-16">
+                    Other
+                </div>
+            </div>
+        </div>
+
+        <div class="w-[314px] h-[60px] relative left-[470px]">
+            <div class="w-[314px] h-[60px] left-0 top-0 absolute bg-black rounded-[30px]"></div>
+            <div class="left-[76px] top-[6px] absolute text-center text-white text-[32px] font-medium font-['Poppins']">
+                Explore all
+            </div>
+        </div>
+
+
+    </div>
+    <div class="relative flex justify-end -mt-20">
+        <img src="../../assets/images/Mask group.svg" class="h-[200px] w-[200px]">
+    </div>
+    <!-- Content -->
+    <div class="relative w-full h-auto overflow-hidden" style="background-color: #262626">
+        <div class="text-center text-white text-5xl font-semibold font-['Poppins'] mt-20">
+            Frontend
+        </div>
+
+        <div class="cards flex relative mt-7 justify-center items-center left-1 z-40">
+            <div class="card flex-1 w-[406px] h-[189px] relative mt-5">
+                <div class="w-[406px] h-[189px] left-0 top-0 absolute bg-black rounded-[20px]"></div>
+                <img class="w-36 h-36 left-[25px] top-[18px] absolute rounded-[10px]"
+                    src="../../assets/images/bootstrap-original.svg" />
+                <div class="left-[191px] top-[18px] absolute text-white text-2xl font-medium font-['Poppins']">
+                    Bootstrap </div>
+                <div
+                    class="left-[191px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Quiz&nbsp;&nbsp;|
+                </div>
+                <div
+                    class="left-[191px] top-[95px] absolute text-white text-opacity-70 text-[9px] font-medium font-['Poppins']">
+                    Duration: 1mo
+                </div>
+                <div
+                    class="left-[227px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Videos |
+                </div>
+                <div
+                    class="left-[276px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Notes
+                </div>
+            </div>
+
+            <div class="card flex-1 w-[406px] h-[189px] relative mt-5">
+                <div class="w-[406px] h-[189px] left-0 top-0 absolute bg-black rounded-[20px]"></div>
+                <img class="w-36 h-36 left-[25px] top-[18px] absolute rounded-[10px]"
+                    src="../../assets/images/html5-original.svg" />
+                <div class="left-[191px] top-[18px] absolute text-white text-2xl font-medium font-['Poppins']">
+                    HTML </div>
+                <div
+                    class="left-[191px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Quiz&nbsp;&nbsp;|
+                </div>
+                <div
+                    class="left-[191px] top-[95px] absolute text-white text-opacity-70 text-[9px] font-medium font-['Poppins']">
+                    Duration: 1mo
+                </div>
+                <div
+                    class="left-[227px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Videos |
+                </div>
+                <div
+                    class="left-[276px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Notes
+                </div>
+            </div>
+
+            <div class="card flex-1 w-[406px] h-[189px] relative mt-5">
+                <div class="w-[406px] h-[189px] left-0 top-0 absolute bg-black rounded-[20px]"></div>
+                <img class="w-36 h-36 left-[25px] top-[18px] absolute rounded-[10px]"
+                    src="../../assets/images/react-original.svg" />
+                <div class="left-[191px] top-[18px] absolute text-white text-2xl font-medium font-['Poppins']">
+                    React </div>
+                <div
+                    class="left-[191px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Quiz&nbsp;&nbsp;|
+                </div>
+                <div
+                    class="left-[191px] top-[95px] absolute text-white text-opacity-70 text-[9px] font-medium font-['Poppins']">
+                    Duration: 1mo
+                </div>
+                <div
+                    class="left-[227px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Videos |
+                </div>
+                <div
+                    class="left-[276px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Notes
+                </div>
+            </div>
+        </div>
+
+        <div class="relative flex justify-start -mt-20">
+            <img src="../../assets/images/Mask group-1.svg" class="h-[200px] w-[200px]">
+        </div>
+
+        <div class="text-center text-white text-5xl font-semibold font-['Poppins'] mt-20">
+            Backend
+        </div>
+        <div class="cards flex relative mt-7 justify-center items-center left-1">
+            <div class="card flex-1 w-[406px] h-[189px] relative mt-5">
+                <div class="w-[406px] h-[189px] left-0 top-0 absolute bg-black rounded-[20px]"></div>
+                <img class="w-36 h-36 left-[25px] top-[18px] absolute rounded-[10px]"
+                    src="../../assets/images/nodejs-original.svg" />
+                <div class="left-[191px] top-[18px] absolute text-white text-2xl font-medium font-['Poppins']">
+                    NodeJS </div>
+                <div
+                    class="left-[191px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Quiz&nbsp;&nbsp;|
+                </div>
+                <div
+                    class="left-[191px] top-[95px] absolute text-white text-opacity-70 text-[9px] font-medium font-['Poppins']">
+                    Duration: 1mo
+                </div>
+                <div
+                    class="left-[227px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Videos |
+                </div>
+                <div
+                    class="left-[276px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Notes
+                </div>
+            </div>
+
+            <div class="card flex-1 w-[406px] h-[189px] relative mt-5">
+                <div class="w-[406px] h-[189px] left-0 top-0 absolute bg-black rounded-[20px]"></div>
+                <img class="w-36 h-36 left-[25px] top-[18px] absolute rounded-[10px]"
+                    src="../../assets/images/laravel-plain.svg" />
+                <div class="left-[191px] top-[18px] absolute text-white text-2xl font-medium font-['Poppins']">
+                    laravell </div>
+                <div
+                    class="left-[191px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Quiz&nbsp;&nbsp;|
+                </div>
+                <div
+                    class="left-[191px] top-[95px] absolute text-white text-opacity-70 text-[9px] font-medium font-['Poppins']">
+                    Duration: 1mo
+                </div>
+                <div
+                    class="left-[227px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Videos |
+                </div>
+                <div
+                    class="left-[276px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Notes
+                </div>
+            </div>
+
+            <div class="card flex-1 w-[406px] h-[189px] relative mt-5">
+                <div class="w-[406px] h-[189px] left-0 top-0 absolute bg-black rounded-[20px]"></div>
+                <img class="w-36 h-36 left-[25px] top-[18px] absolute rounded-[10px]"
+                    src="../../assets/images/python-original.svg" />
+                <div class="left-[191px] top-[18px] absolute text-white text-2xl font-medium font-['Poppins']">
+                    python </div>
+                <div
+                    class="left-[191px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Quiz&nbsp;&nbsp;|
+                </div>
+                <div
+                    class="left-[191px] top-[95px] absolute text-white text-opacity-70 text-[9px] font-medium font-['Poppins']">
+                    Duration: 1mo
+                </div>
+                <div
+                    class="left-[227px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Videos |
+                </div>
+                <div
+                    class="left-[276px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Notes
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center text-white text-5xl font-semibold font-['Poppins'] mt-20">
+            Database
+        </div>
+        <div class="relative flex justify-end -mt-20 -mr-16">
+            <img src="../../assets/images/Mask group-2.svg" class="h-[200px] w-[200px]">
+        </div>
+        <div class="cards flex relative mt-7 justify-center items-center left-1">
+            <div class="card flex-1 w-[406px] h-[189px] relative mt-5">
+                <div class="w-[406px] h-[189px] left-0 top-0 absolute bg-black rounded-[20px]"></div>
+                <img class="w-36 h-36 left-[25px] top-[18px] absolute rounded-[10px]"
+                    src="../../assets/images/oracle-original.svg" />
+                <div class="left-[191px] top-[18px] absolute text-white text-2xl font-medium font-['Poppins']">
+                    Oracle
+                </div>
+                <div
+                    class="left-[191px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Quiz&nbsp;&nbsp;|
+                </div>
+                <div
+                    class="left-[191px] top-[95px] absolute text-white text-opacity-70 text-[9px] font-medium font-['Poppins']">
+                    Duration: 1mo
+                </div>
+                <div
+                    class="left-[227px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Videos |
+                </div>
+                <div
+                    class="left-[276px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Notes
+                </div>
+            </div>
+
+            <div class="card flex-1 w-[406px] h-[189px] relative mt-5">
+                <div class="w-[406px] h-[189px] left-0 top-0 absolute bg-black rounded-[20px]"></div>
+                <img class="w-36 h-36 left-[25px] top-[18px] absolute rounded-[10px]"
+                    src="../../assets/images/mysql-original.svg" />
+                <div class="left-[191px] top-[18px] absolute text-white text-2xl font-medium font-['Poppins']">
+                    MySQL </div>
+                <div
+                    class="left-[191px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Quiz&nbsp;&nbsp;|
+                </div>
+                <div
+                    class="left-[191px] top-[95px] absolute text-white text-opacity-70 text-[9px] font-medium font-['Poppins']">
+                    Duration: 1mo
+                </div>
+                <div
+                    class="left-[227px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Videos |
+                </div>
+                <div
+                    class="left-[276px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Notes
+                </div>
+            </div>
+
+            <div class="card flex-1 w-[406px] h-[189px] relative mt-5">
+                <div class="w-[406px] h-[189px] left-0 top-0 absolute bg-black rounded-[20px]"></div>
+                <img class="w-36 h-36 left-[25px] top-[18px] absolute rounded-[10px]"
+                    src="../../assets/images/mongodb-original-wordmark.svg" />
+                <div class="left-[191px] top-[18px] absolute text-white text-2xl font-medium font-['Poppins']">
+                    MongoDB
+                </div>
+                <div
+                    class="left-[191px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Quiz&nbsp;&nbsp;|
+                </div>
+                <div
+                    class="left-[191px] top-[95px] absolute text-white text-opacity-70 text-[9px] font-medium font-['Poppins']">
+                    Duration: 1mo
+                </div>
+                <div
+                    class="left-[227px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Videos |
+                </div>
+                <div
+                    class="left-[276px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Notes
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center text-white text-5xl font-semibold font-['Poppins'] mt-20">
+            Other
+        </div>
+        <div class="cards flex relative mt-7 justify-center items-center left-1 z-50">
+            <div class="card flex-1 w-[406px] h-[189px] relative mt-5">
+                <div class="w-[406px] h-[189px] left-0 top-0 absolute bg-black rounded-[20px]"></div>
+                <img class="w-36 h-36 left-[25px] top-[18px] absolute rounded-[10px]"
+                    src="../../assets/images/figma-original.svg" />
+                <div class="left-[191px] top-[18px] absolute text-white text-2xl font-medium font-['Poppins']">
+                    Figma </div>
+                <div
+                    class="left-[191px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Quiz&nbsp;&nbsp;|
+                </div>
+                <div
+                    class="left-[191px] top-[95px] absolute text-white text-opacity-70 text-[9px] font-medium font-['Poppins']">
+                    Duration: 1mo
+                </div>
+                <div
+                    class="left-[227px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Videos |
+                </div>
+                <div
+                    class="left-[276px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Notes
+                </div>
+            </div>
+
+            <div class="card flex-1 w-[406px] h-[189px] relative mt-5">
+                <div class="w-[406px] h-[189px] left-0 top-0 absolute bg-black rounded-[20px]"></div>
+                <img class="w-36 h-36 left-[25px] top-[18px] absolute rounded-[10px]"
+                    src="../../assets/images/blender-original.svg" />
+                <div class="left-[191px] top-[18px] absolute text-white text-2xl font-medium font-['Poppins']">
+                    Blender </div>
+                <div
+                    class="left-[191px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Quiz&nbsp;&nbsp;|
+                </div>
+                <div
+                    class="left-[191px] top-[95px] absolute text-white text-opacity-70 text-[9px] font-medium font-['Poppins']">
+                    Duration: 1mo
+                </div>
+                <div
+                    class="left-[227px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Videos |
+                </div>
+                <div
+                    class="left-[276px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Notes
+                </div>
+            </div>
+
+            <div class="card flex-1 w-[406px] h-[189px] relative mt-5">
+                <div class="w-[406px] h-[189px] left-0 top-0 absolute bg-black rounded-[20px]"></div>
+                <img class="w-36 h-36 left-[25px] top-[18px] absolute rounded-[10px]"
+                    src="../../assets/images/androidstudio-original.svg" />
+                <div class="left-[191px] top-[18px] absolute text-white text-2xl font-medium font-['Poppins']">
+                    Android Studio </div>
+                <div
+                    class="left-[191px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Quiz&nbsp;&nbsp;|
+                </div>
+                <div
+                    class="left-[191px] top-[95px] absolute text-white text-opacity-70 text-[9px] font-medium font-['Poppins']">
+                    Duration: 1mo
+                </div>
+                <div
+                    class="left-[227px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Videos |
+                </div>
+                <div
+                    class="left-[276px] top-[65px] absolute text-white text-opacity-70 text-[11px] font-medium font-['Poppins']">
+                    Notes
+                </div>
+            </div>
+        </div>
+        <div class="relative flex justify-start -mt-20">
+            <img src="../../assets/images/mask3.svg" class="h-[200px] w-[200px]">
+        </div>
+
+        <div class="w-full mt-20 flex justify-center" style="background-color: #f0db4f; height: 100vh">
+            <div class="relative flex justify-end -mt-20 ml-[940px] h-72">
+                <img src="../../assets/images/Cones-2-metallic.png">
+            </div>
+            <div class="text-black text-[64px] font-semibold font-['Poppins'] mt-32 absolute">
+                What's the wait?
+            </div>
+            <div class="text-black text-5xl font-semibold font-['Poppins'] mt-56 absolute">
+                Start your learning today with Academia Hub
+            </div>
+            <div class="w-[551px] h-[75px] absolute bottom-40">
+                <div class="w-[551px] h-[75px] left-0 absolute bg-blue-600 rounded-[40px]"></div>
+                <div class="left-[118px] top-3 absolute text-white text-5xl font-semibold font-['Poppins']">
+                    Register now
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer h-fit w-full py-20 relative" style="background-color: #262626">
+        <div class="flex flex-row justify-between text-white p-20 font-thin text-xs">
+            <div class="flex flex-col gap-3">
+                <div class="text-base font-bold">Academia Hub</div>
+                <br />
+                <div>Pricing</div>
+                <div>Updates</div>
+                <div>Beta</div>
+                <div>Newsletter</div>
+                <div>collaboration</div>
+            </div>
+            <div class="flex flex-col gap-3">
+                <div class="text-base font-bold">Product</div>
+                <br />
+                <div>Business</div>
+                <div>Designers</div>
+                <div>Classrooms</div>
+                <div>Newcorners</div>
+            </div>
+            <div class="flex flex-col gap-3">
+                <div class="text-base font-bold">Learning</div>
+                <br />
+                <div>Learn Hub</div>
+                <div>Manuals</div>
+                <div>Tutorials</div>
+                <div>Communities</div>
+            </div>
+            <div class="flex flex-col gap-3">
+                <div class="text-base font-bold">Resources</div>
+                <br />
+                <div>Tutorials</div>
+                <div>Editorials</div>
+                <div>Product</div>
+                <div>Newrooms</div>
+            </div>
+            <div class="flex flex-col gap-3">
+                <div class="text-base font-bold">About</div>
+                <br />
+                <div>Company</div>
+                <div>Careers</div>
+                <div>Legal</div>
+                <div>Help</div>
+            </div>
+        </div>
+        <div class="flex justify-center w-full text-white flex-col items-center">
+            <div class="text-lg font-bold">ACADEMIA HUB</div>
+            <div class="text-xs font-thin">Learn, Collaborate, Succeed</div>
+            <div class="text-xs font-thin mt-10">
+                &#169; 2024 Academia Hub. All rights reserved.
+            </div>
+            <div class="mt-3">
+                <img src="../../assets/images/socials.png" alt="" />
             </div>
         </div>
     </div>

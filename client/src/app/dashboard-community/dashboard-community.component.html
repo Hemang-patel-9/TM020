@@ -1,0 +1,113 @@
+<div style="background-color: #262626;" class="h-screen">
+	<div class="header pt-10">
+		<div class="flex flex-row justify-between gap-2 align-middle items-center bg-black text-white px-10 py-1">
+			<div class="flex flex-row justify-center items-center">
+				<div><img src="../../assets/images/Rectangle 42.svg" alt=""></div>
+				<div class="font-bold flex-col flex gap-0 text-sm tracking-widest">ACADEMIA HUB <span
+						class="font-semibold text-xs tracking-normal"> Learn, Collaborate, Succeed </span></div>
+			</div>
+			<div class="flex flex-row gap-4 text-yellow-300 text-2xl">
+				<div class="fa fa-sign-out"></div>
+				<div class="fa fa-bell-o"></div>
+				<div class="fa fa-user"></div>
+			</div>
+		</div>
+		<div class="flex flex-row justify-center gap-10 text-base text-white py-3" style="background-color: #333333;">
+			<div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60" routerLink="/userhome">
+				Home</div>
+			<div class="border-b-green-600 font-bold border-b-2">Community</div>
+			<div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60" routerLink="/userquiz">
+				Quiz</div>
+			<div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60"
+				routerLink="/usercourses">Courses</div>
+			<div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60"
+				routerLink="/usertechtokens">TechTokens</div>
+			<div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60" routerLink="/help">Help
+			</div>
+		</div>
+	</div>
+	<form action="">
+		<div class="flex flex-col gap-5 p-10" *ngIf="currentpage === 1">
+			<div class="flex text-white text-5xl font-bold justify-between">
+				<div class="flex flex-col justify-start align-middle items-center">
+					<div class="fa fa-home text-2xl text-blue-500"></div>
+					<div class="fa fa-envelope text-xl" (click)="onnextstep()"></div>
+				</div>
+				<div class="w-1/2 text-center">
+					Find your community on Academia hub
+				</div>
+				<div></div>
+			</div>
+			<div class="flex justify-center">
+				<input type="text" placeholder="Explore communities" size="100"
+					class="py-1 text-sm focus:outline-none focus:border-none indent-2">
+				<button class="fa fa-search ml-3 bg-blue-400 rounded-sm px-2  text-white text-xs"></button>
+			</div>
+			<div class="flex justify-center gap-20 mt-10">
+				<div class="flex flex-col text-white gap-3 w-48 text-xs">
+					<div *ngFor="let i of temp">
+						<div class="flex flex-row justify-between items-center">
+							<div class="flex gap-2 justify-center items-center">
+								<div><img src={{i.img}} alt="" class="w-4 h-4"></div>
+								<div>{{i.name}}</div>
+							</div>
+							<div>{{i.number}}</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex flex-col gap-3 w-2/3">
+					<div class="text-white">22819 Results Found</div>
+					<div *ngFor="let i of temp2" class="text-white text-xs">
+						<div class="flex gap-2">
+							<div><img src={{i.bg}} alt="" class="w-44 h-28"></div>
+							<div class="flex flex-col gap-2">
+								<div class="flex gap-2">
+									<div><img src={{i.icon}} alt=""></div>
+									<div class="font-bold text-sm"> {{i.name}}</div>
+								</div>
+								<div>{{i.desc}}</div>
+								<div class="opacity-40">{{i.member}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="flex flex-col gap-5 p-10" *ngIf="currentpage === 2">
+			<div class="flex text-white justify-between">
+				<div class="flex flex-col justify-start align-middle items-center">
+					<div class="fa fa-home text-2xl " (click)="onbeforestep()"></div>
+					<div class="fa fa-envelope text-xl text-blue-500"></div>
+				</div>
+				<div class="w-1/2 h-96 text-center flex flex-col shadow-lg shadow-slate-600 border justify-between">
+					<div class="flex justify-center gap-4 px-10">
+						<div class="flex justify-center text-white font-bold text-2xl">Java Script Comunity</div>
+						<div
+							class="w-[94px] h-11 px-4 py-2.5 bg-indigo-500 bg-opacity-10 rounded-lg justify-start items-center gap-2 inline-flex ml-auto">
+						
+							<div class="w-6 h-6 px-0.5 py-0.5 justify-center items-center flex">
+								<img src="../../assets/images/call.svg" alt="Your Image" class="w-[24px] h-[24px] object-cover">
+							</div>
+							<div class="text-indigo-500 text-base font-semibold font-['Poppins'] leading-tight"><a href="http://localhost:3001"
+									target="_blank">Call</a></div>
+						
+						</div>
+					</div>
+					<div id="chatdiv" *ngFor="let msg of messageList" >
+						<div class="overflow-x-hidden overflow-y-auto">
+							<div *ngIf="msg.sent == true" class="message right">{{msg.msg}}</div>
+							<div *ngIf="msg.sent == false" class="message left">{{msg.msg}}</div>
+						</div>
+					</div>
+					<div class="flex justify-center items-center text-black text-xs gap-3 my-2 mx-5">
+						<input [(ngModel)]="newMessage" (keyup)="$event.keyCode == 13 && sendMessage()"
+							[ngModelOptions]="{standalone: true }" type="text" class="w-full" />
+						<span (click)="sendMessage()" class="fa fa-send text-xs text-white"></span>
+					</div>
+				</div>
+				<div></div>
+			</div>
+		</div>
+	</form>
+</div>

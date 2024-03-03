@@ -1,0 +1,37 @@
+.scrollview::-webkit-scrollbar {
+	width: 1px;
+	background: transparent;
+}
+
+.scrollview::-webkit-scrollbar-thumb {
+	background-color: transparent;
+}
+
+.scrollview::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+.scrollview::-webkit-scrollbar {
+	width: 2px;
+}
+
+.scrollview {
+	background: transparent;
+	overflow-x: hidden;
+}
+
+/* div::-webkit-scrollbar {
+    width: 10px; 
+  }
+  
+  div::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  
+  div::-webkit-scrollbar-thumb {
+    background: #000000; 
+  }
+  
+  div::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  } */

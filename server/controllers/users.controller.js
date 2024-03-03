@@ -38,6 +38,7 @@ const addUser = async (req, res, next) => {
 
 const signin = async (req, res, next) => {
 	const body = req.body;
+	console.log(body);
 	if (body.email && body.password) {
 		try {
 			const user = await User.findOne({ email: body.email });
@@ -52,25 +53,27 @@ const signin = async (req, res, next) => {
 				return res.status(400).send({ message: 'Invalid details!' });
 			}
 
-			let token = jwt.sign({ _id: this._id }, process.env.SECRET_KEY);
-			user.tokens = user.tokens.concat({ token: token });
+			console.log(user);
 
-			await user.save();
+			// let token = jwt.sign({ _id: this._id }, process.env.SECRET_KEY);
+			// user.tokens = user.tokens.concat({ token: token });
 
-			res.cookie('jwt', token, {
-				maxAge: 15 * 60 * 1000,
-				http: true,
-				secure: true
-			});
+			// await user.save();
 
-			res.status(200).json(user);
+			// res.cookie('jwt', token, {
+			// 	maxAge: 15 * 60 * 1000,
+			// 	http: true,
+			// 	secure: true
+			// });
+
+			return res.status(200).json(user);
 		}
 		catch (err) {
-			res.status(500).json({ message: err.message });
+			return res.status(500).json({ message: err.message });
 		}
 	}
 	else {
-		res.status(400).json({ message: "Please Enter Email and Password" });
+		return res.status(400).json({ message: "Please Enter Email and Password" });
 	}
 }
 
@@ -129,11 +132,48 @@ const extraData = async (req, res, next) => {
 		res.status(500).json({ message: err.message });
 	}
 }
+
+const addCourse = async (req, res) => {
+	try {
+		console.log(req.body);
+		const currentUser = await User.findOne({ email: req.params.emailid });
+
+		currentUser.courses.push({ courseName: req.body.courseName, courseProgress: req.body.courseProgress });
+
+		await currentUser.save();
+
+		return res.status(200).json({ message: "User updated" });;
+	}
+	catch (err) {
+		return res.status(500).json({ message: err.message });
+	}
+}
+
+const getOneUser = async (req, res) => {
+	try {
+		const currentUser = await User.findOne({ email: req.params.emailid });
+
+		return res.status(200).json(currentUser);
+	}
+	catch (err) {
+		res.status(500).json({ message: err.message });
+	}
+}
+
+const vcall = async (req, res, next) => {
+	console.log("reached");
+
+	return res.status(200).json();
+}
+
 module.exports = {
 	addUser,
 	signin,
 	deleteUser,
-	extraData
+	extraData,
+	getOneUser,
+	addCourse, 
+	vcall
 }
 
 

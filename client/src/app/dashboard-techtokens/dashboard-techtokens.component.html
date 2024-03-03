@@ -1,0 +1,68 @@
+<div style="background-color: #262626;" class="h-screen">
+	<div class="header pt-10">
+		<div class="flex flex-row justify-between gap-2 align-middle items-center bg-black text-white px-10 py-1">
+			<div class="flex flex-row justify-center items-center">
+				<div><img src="../../assets/images/Rectangle 42.svg" alt=""></div>
+				<div class="font-bold flex-col flex gap-0 text-sm tracking-widest">ACADEMIA HUB <span
+						class="font-semibold text-xs tracking-normal"> Learn, Collaborate, Succeed </span></div>
+			</div>
+			<div class="flex flex-row gap-4 text-yellow-300 text-2xl">
+				<div class="fa fa-sign-out"></div>
+				<div class="fa fa-bell-o"></div>
+				<div class="fa fa-user"></div>
+			</div>
+		</div>
+		<div class="flex flex-row justify-center gap-10 text-base text-white py-3" style="background-color: #333333;">
+			<div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60"
+				routerLink="/userhome">Home</div>
+			<div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60"
+				routerLink="/dashboard-community">Community</div>
+			<div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60"
+				routerLink="/dashboard-quiz">Quiz</div>
+			<div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60"
+				routerLink="/dashboard-courses">Courses</div>
+			<div class="border-b-green-600 font-bold border-b-2">TechTokens</div>
+			<div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60"
+				routerLink="/dashboard-help">Help</div>
+		</div>
+	</div>
+
+	<div class="flex flex-col justify-center items-center mt-10">
+		<div class="grid grid-cols-12 gap-y-5 gap-x-10">
+			<div *ngFor="let n of numSequence(60); 
+            let i = index;">
+				<div class="w-5 h-5 bg-green-300" *ngIf="i%5 == 0 || i%8 == 0"></div>
+				<div class="w-5 h-5 bg-black" *ngIf="i%5 != 0 && i%8 != 0"></div>
+			</div>
+		</div>
+		<div class="flex flex-row justify-center items-center mt-10 gap-10">
+			<div class="w-64 h-36 bg-black shadow-slate-600 rounded-xl text-white">
+				<div class="flex justify-between p-3 items-center">
+					<div class="text-green-400 font-bold text-lg">Daily Problems</div>
+					<div><img src="../../assets/images/Etherium-3.png" class="h-10 w-9" alt=""></div>
+				</div>
+				<div class="flex justify-center"><span class="text-red-400 text-3xl font-bold ml-3">35</span>
+				</div>
+
+			</div>
+			<div class="w-64 h-36 bg-black shadow-slate-600 rounded-xl text-white">
+				<div class="flex justify-between p-3 items-center">
+					<div class="text-green-400 font-bold text-lg">Video Lectures</div>
+					<div><img src="../../assets/images/Etherium-3.png" class="h-10 w-9" alt=""></div>
+				</div>
+				<div class="flex justify-center"><span class="text-red-400 text-3xl font-bold ml-3">45</span>
+				</div>
+
+			</div>
+			<div class="w-64 h-36 bg-black shadow-slate-600 rounded-xl text-white">
+				<div class="flex justify-between p-3 items-center">
+					<div class="text-green-400 font-bold text-lg">Quizes</div>
+					<div><img src="../../assets/images/Etherium-3.png" class="h-10 w-9" alt=""></div>
+				</div>
+				<div class="flex justify-center"><span class="text-red-400 text-3xl font-bold ml-3">10</span>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

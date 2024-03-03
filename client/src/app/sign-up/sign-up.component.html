@@ -1,4 +1,4 @@
-<div class="h-screen w-full font-normal" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #262626;">
+<div class="h-screen w-full font-normal overflow-hidden" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #262626;">
     <div class="h-screen justify-center px-40 py-20" style="background-image: url('../../assets/images/MacBook\ Air\ -\ 6.jpg'); background-size:100% 100%;">
         <div class="flex flex-row bg-white rounded-xl " data-aos="zoom-in" data-aos-duration="3000">
         <div class="flex flex-col">
@@ -34,7 +34,8 @@
                     <div class="mt-4 flex gap-1"><input type="checkbox" formControlName="rememberMe"> <label for="rememberMe"> Remember Me</label></div>
                     
                     <div class="flex-row flex my-10 justify-between items-center">
-                        <div class="underline">log in instead</div>
+                        <div><button class="underline text-xs text-blue-400" (click)="loginWithGoogle()">continue with google</button></div>
+                        <div class="underline" routerLink="/login">log in instead</div>
                         <button type="submit" class="bg-zinc-400 rounded-full px-8 py-2 font-bold text-lg text-white hover:bg-blue-600" (click)="adduser()">Create an account</button>
                     </div>
                 </form>

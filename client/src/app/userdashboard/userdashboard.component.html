@@ -1,9 +1,11 @@
+<h2 class="text-cyan-50">{{currentUser.name}}</h2>
 <div style="background-color: #262626;" class="h-screen">
     <div class="header pt-10">
         <div class="flex flex-row justify-between gap-2 align-middle items-center bg-black text-white px-10 py-1">
             <div class="flex flex-row justify-center items-center">
                 <div><img src="../../assets/images/Rectangle 42.svg" alt=""></div>
-                <div class="font-bold flex-col flex gap-0 text-sm tracking-widest" >ACADEMIA HUB <span class="font-semibold text-xs tracking-normal"> Learn, Collaborate, Succeed </span></div>
+                <div class="font-bold flex-col flex gap-0 text-sm tracking-widest">ACADEMIA HUB <span
+                        class="font-semibold text-xs tracking-normal"> Learn, Collaborate, Succeed </span></div>
             </div>
             <div class="flex flex-row gap-4 text-yellow-300 text-2xl">
                 <div class="fa fa-sign-out"></div>
@@ -12,14 +14,130 @@
             </div>
         </div>
         <div class="flex flex-row justify-center gap-10 text-base text-white py-3" style="background-color: #333333;">
-            <div>Home</div>
-            <div>Community</div>
-            <div>Quiz</div>
-            <div>Courses</div>
-            <div>Planner</div>
-            <div>Events</div>
-            <div>TechTokens</div>
-            <div>Help</div>
+            <div class="border-b-green-600 font-bold border-b-2">Home</div>
+            <div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-50"
+                routerLink="/usercommunity">Community</div>
+            <div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60" routerLink="/userquiz">
+                Quiz</div>
+            <div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60"
+                routerLink="/usercourses">Courses</div>
+            <div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60"
+                routerLink="/usertechtokens">TechTokens</div>
+            <div class="hover:text-yellow-400 hover:font-bold hover:cursor-pointer opacity-60" routerLink="/help">Help
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col p-5">
+        <div class="flex flex-row justify-center w-full gap-5">
+            <div class="flex justify-center mt-5">
+                <div class="scrollview grid grid-cols-1 gap-4 overflow-scroll h-80">
+                    <div *ngFor="let temp of currentUser.courses; let i = index">
+                        <div class="bg-white rounded-2xl h-36 " style="width: 320px;" *ngIf="temp.courseName!=null">
+                            <div class="flex justify-between p-5">
+                                <div class="fa fa-home"></div>
+                                <div class="fa fa-ellipsis-h"></div>
+                            </div>
+                            <div class="text-black font-bold text-base flex ml-5">
+                                {{temp.courseName}}
+                            </div>
+                            <div class="flex justify-between m-5 items-center">
+                                <div class="bg-gray-300 w-48 h-1.5 rounded-full  ">
+                                    <div class="bg-yellow-300 h-full rounded-full" [style.width.%]='temp.progress'>
+                                    </div>
+                                </div>
+                                <div class="text-xs">{{temp.courseProgress}}%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-4 mt-5">
+                <div class="bg-white w-80 h-44 rounded-3xl flex flex-col">
+                    <div class="m-4 font-bold text-xl">
+                        * Work to do
+                    </div>
+                    <div class="grid grid-cols-2 ml-4">
+                        <div>HTML Lecture <span class="fa fa-check text-green-400"></span></div>
+                        <div>Tailwind Lecture <span class="fa fa-close text-red-400"></span></div>
+                        <div>NodeJS Lecture <span class="fa fa-check text-green-400"></span></div>
+                        <div>Daily Problem <span class="fa fa-check text-green-400"></span></div>
+                        <div>HTML Lecture <span class="fa fa-check text-green-400"></span></div>
+                        <div>Tailwind Lecture <span class="fa fa-close text-red-400"></span></div>
+                        <div>NodeJS Lecture <span class="fa fa-check text-green-400"></span></div>
+                        <div>Daily Problem <span class="fa fa-check text-green-400"></span></div>
+                    </div>
+                </div>
+                <div class="bg-black w-56 h-28 rounded-3xl px-4 pt-4">
+                    <div class="flex justify-between">
+                        <div class="flex flex-col">
+                            <div class="text-gray-400 text-xs">TechTokens</div>
+                            <div class="text-2xl text-yellow-600 font-bold">{{number}}</div>
+                        </div>
+                        <div>
+                            <img src="../../assets/images/Etherium-3.png" alt="" class="w-9 h-10">
+                        </div>
+                    </div>
+                    <div class="flex gap-2 py-4 items-center -mt-2">
+                        <div><button
+                                class="px-3 py-1 bg-green-200 rounded-md text-green-600 font-semibold text-sm">+0.56%</button>
+                        </div>
+                        <div class="text-xs text-gray-500">in few days</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <img src="../../assets/images/Calendar.png" alt="" class="h-60 w-56 rounded-2xl">
+            </div>
+        </div>
+
+        <div class="flex flex-row justify-center gap-5 mt-3">
+            <div class="flex justify-center items-center rounded-xl text-4xl font-bold bg-yellow-400 w-56 h-40">Quiz
+            </div>
+            <div class="flex flex-col p-4 justify-center text-white bg-blue-600 text-sm w-80 h-40 rounded-xl">
+                <div class="flex justify-center">Recommended Academia Courses</div>
+                <div class="flex justify-center gap-3 mt-3">
+                    <img src="../../assets/images/bootstrap-original.png" alt="" class="w-16 h-16">
+                    <img src="../../assets/images/react-original.png" alt="" class="w-16 h-16">
+                    <img src="../../assets/images/javascript-original.png" alt="" class="w-16 h-16">
+                </div>
+            </div>
+            <div class="bg-white rounded-lg h-60 w-80 -mt-16 px-4 pt-4">
+                <div class="flex justify-between text-sm">
+                    <div class="font-bold">Logged in Communities</div>
+                    <div class="text-blue-600">see all</div>
+                </div>
+                <div class="flex flex-col gap-2 mt-2">
+                    <div
+                        class="flex gap-2 align-middle items-center justify-between text-xs border p-2 shadow-lg rounded-md">
+                        <div class="flex gap-2 justify-center items-center">
+                            <div><img src="../../assets/images/large.png" alt="" class="w-10 h-10"></div>
+                            <div><span class="font-bold">Java Script</span> <br>100 Members</div>
+                        </div>
+                        <div class="fa fa-ellipsis-v "></div>
+                    </div>
+                    <div
+                        class="flex gap-2 align-middle items-center justify-between text-xs border p-2 shadow-lg rounded-md">
+                        <div class="flex gap-2 justify-center items-center">
+                            <div><img src="../../assets/images/large.png" alt="" class="w-10 h-10"></div>
+                            <div><span class="font-bold">Java Script</span> <br>100 Members</div>
+                        </div>
+                        <div class="fa fa-ellipsis-v "></div>
+                    </div>
+                    <div
+                        class="flex gap-2 align-middle items-center justify-between text-xs border p-2 shadow-lg rounded-md">
+                        <div class="flex gap-2 justify-center items-center">
+                            <div><img src="../../assets/images/large.png" alt="" class="w-10 h-10"></div>
+                            <div><span class="font-bold">Java Script</span> <br>100 Members</div>
+                        </div>
+                        <div class="fa fa-ellipsis-v "></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+
         </div>
     </div>
 </div>
