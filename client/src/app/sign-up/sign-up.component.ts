@@ -5,7 +5,8 @@ import { ApiUserService } from '../services/api-user.service';
 import { Router } from '@angular/router';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
 import 'firebase/auth';
-import {AuthService} from '../services/auth-google.service';
+import { ApiMsgService } from '../services/api-msg.service';
+// import {AuthService} from '../services/auth-google.service';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class SignUpComponent implements OnInit {
   );
   notMatch = false
 
-  constructor(private _api: ApiUserService, private _router: Router,private authService:AuthService) { }
+  constructor(private _api: ApiUserService, private _router: Router, private data:ApiMsgService ) { }
 
   onSubmit() {
     console.log(this.signupForm.value);
@@ -41,18 +42,20 @@ export class SignUpComponent implements OnInit {
       location.reload();
       return;
     }
+    this.submitEmail();
 
     this._api.register(this.signupForm.value).subscribe((res) => {
       this._router.navigate(['/welcomeuser'])
     });
 
     this._api.email = this.signupForm.value.email;
+
   }
 
-  loginWithGoogle() {
-    // this.authService.GoogleAuth();
-    // const auth = getAuth();
-    // return signInWithPopup(auth, new GoogleAuthProvider());
+  submitEmail() {
+    console.log(this.signupForm.value.email);
+    this.data.mail({ email: this.signupForm.value.email }).subscribe((res:any) => {
+      console.log(res);
+    });
   }
-
 }

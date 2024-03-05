@@ -12,6 +12,7 @@ import { HeroCoursesComponent } from './hero-courses/hero-courses.component';
 import { HeroQuizComponent } from './hero-quiz/hero-quiz.component';
 import { HeroAboutComponent } from './hero-about/hero-about.component';
 import { HeroHelpComponent } from './hero-help/hero-help.component';
+import { WelcomeUserPageComponent } from './welcome-user-page/welcome-user-page.component';
 
 const routes: Routes = [
   { path: '', component: HeroSectionComponent },
@@ -47,6 +48,9 @@ const routes: Routes = [
   },
   {
     path: 'hero-help', component: HeroHelpComponent
+  },
+  {
+    path:'welcomeuser',component:WelcomeUserPageComponent
   }
 ];
 

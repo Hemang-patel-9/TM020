@@ -55,17 +55,6 @@ const signin = async (req, res, next) => {
 
 			console.log(user);
 
-			// let token = jwt.sign({ _id: this._id }, process.env.SECRET_KEY);
-			// user.tokens = user.tokens.concat({ token: token });
-
-			// await user.save();
-
-			// res.cookie('jwt', token, {
-			// 	maxAge: 15 * 60 * 1000,
-			// 	http: true,
-			// 	secure: true
-			// });
-
 			return res.status(200).json(user);
 		}
 		catch (err) {

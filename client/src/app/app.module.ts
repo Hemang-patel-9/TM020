@@ -15,14 +15,6 @@ import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { HeroCoursesComponent } from './hero-courses/hero-courses.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardCommunityComponent } from './dashboard-community/dashboard-community.component';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { getAuth, provideAuth } from '@angular/fire/auth';
-import { getAnalytics, provideAnalytics } from '@angular/fire/analytics';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { getRemoteConfig, provideRemoteConfig } from '@angular/fire/remote-config';
-import { AngularFireModule } from '@angular/fire/compat'
-import { AngularFireAuthModule } from '@angular/fire/compat/auth'
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { HelloComponent } from './videocall/hello.component';
 import { HeroQuizComponent } from './hero-quiz/hero-quiz.component';
 import { HeroAboutComponent } from './hero-about/hero-about.component';
@@ -57,14 +49,6 @@ import { DashboardTechtokensComponent } from './dashboard-techtokens/dashboard-t
     RouterModule,
     CommonModule,
     HttpClientModule,
-    provideFirebaseApp(() => initializeApp({ "projectId": "auth-practice-620eb", "appId": "1:781210580581:web:f249216543456a47b4b88c", "storageBucket": "auth-practice-620eb.appspot.com", "apiKey": "AIzaSyCQaElP6JlAEhCDFTUHXg23mUENPUxz2JY", "authDomain": "auth-practice-620eb.firebaseapp.com", "messagingSenderId": "781210580581" })),
-    provideAuth(() => getAuth()),
-    provideAnalytics(() => getAnalytics()),
-    provideFirestore(() => getFirestore()),
-    provideRemoteConfig(() => getRemoteConfig()),
-    AngularFireModule,
-    AngularFirestoreModule,
-    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
